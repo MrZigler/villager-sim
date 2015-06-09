@@ -328,12 +328,12 @@ class World(object):  # Class that stores basically EVERYTHING
     def add_built(self, building, pos):
 
         buildable = self.test_buildable(building, 1, pos)
-        print pos
+        print(pos)
 
         if buildable:
             Build = buildable[1]
             Build.location = pos
-            print "LOC2: ", Build.location
+            print("LOC2: ", Build.location)
             self.add_entity(Build)
             self.buildings[building] = Build
             return 1
@@ -553,7 +553,7 @@ class World(object):  # Class that stores basically EVERYTHING
                     try:
                         array[a][i] = self.TileArray[int((start_tile.y + a) - 1)][int((start_tile.x + i) - 1)]
                     except IndexError:
-                        print a, i, start_tile
+                        print(a, i, start_tile)
                         raise IndexError
 
         return array
