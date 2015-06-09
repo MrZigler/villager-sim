@@ -85,7 +85,7 @@ class World(object):  # Class that stores basically EVERYTHING
         self.clock = pygame.time.Clock()
 
         self.shadowDown = 3.0 / ((self.size[0] / self.TileSize) / 128.0)
-        print "Shadow Down", self.shadowDown
+        print("Shadow Down", self.shadowDown)
 
         self.background = pygame.Surface(
             (self.size[0], self.size[1]), HWSURFACE)
@@ -314,12 +314,12 @@ class World(object):  # Class that stores basically EVERYTHING
     def add_building(self, building, pos):
 
         buildable = self.test_buildable(building, 0, pos)
-        print pos
+        print(pos)
 
         if buildable:
             Build = buildable[1]
             Build.location = self.get_tile_pos(pos - self.background_pos) * 32
-            print "LOC: ", Build.location
+            print("LOC: ", Build.location)
             self.add_entity(Build)
             self.buildings[building] = Build
             self.BuildingQueue.append(Build)
